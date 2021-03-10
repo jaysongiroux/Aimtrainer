@@ -1,17 +1,30 @@
 import React,{Component} from 'react';
-import Target from './Target'
+import PauseMenu from './pauseMenu'
 import MainMenu from './MainMenu'
 
 export default class App extends Component{
 	constructor(props){
-		super(props)
+		super(props);
+		this.state = {
+			pause: false
+		};
+
+		this.escFunction = this.escFunction.bind(this);
+	}
+
+	escFunction(event){
+		if(event.key === 'Escape'){
+			console.log('pause')
+			this.setState({
+				pause: !this.state.pause
+			})
+		}
 	}
 
 	render(){
 		return (
-			<div className={"App"}>
-				<MainMenu/>
-				<Target />
+			<div className={"App"} onKeyDown={this.escFunction} tabIndex={0}>
+				<MainMenu pause={this.state.pause}/>
 			</div>
 		)
 	}
