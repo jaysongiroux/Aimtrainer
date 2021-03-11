@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import Grid from '@material-ui/core/Grid';
-import BeginGame from "./BeginGame";
 import TimeTrial from "./TimeTrial";
 
 export default class Target extends Component{
@@ -12,7 +11,6 @@ export default class Target extends Component{
             settings: false,
             leaderBoards: false,
             difficulty: false,
-            pause: false
         }
 
         this.bindMethods()
@@ -25,6 +23,7 @@ export default class Target extends Component{
         this.onSettingsClick = this.onSettingsClick.bind(this);
         this.showMenuBox = this.showMenuBox.bind(this);
         this.hideMenuBox = this.hideMenuBox.bind(this);
+        this.endGame = this.endGame.bind(this)
     }
 
     hideMenuBox(){
@@ -56,6 +55,12 @@ export default class Target extends Component{
 
     onSettingsClick(){
         this.hideMenuBox()
+    }
+
+    endGame(){
+        this.setState({
+            hideMenu: false
+        })
     }
 
     render(){
@@ -93,7 +98,7 @@ export default class Target extends Component{
 
         if(this.state.timeTrial){
             return (
-                <TimeTrial startStatus={this.state.timeTrial} pause={this.props.pause}/>
+                <TimeTrial startStatus={this.state.timeTrial} endGame={this.endGame}/>
             )
         }
 
