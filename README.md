@@ -1,6 +1,6 @@
 ## 2 day Challenge - Aimtrainer
 
-Self defined coding challenege to create a usable game in react/electron. This game's purpose is to help FPS players warm up by honing in their mouse accuracy by practicing against a randomly moving target. the size varies based on the difficulty the user selects
+Self defined coding challenge to create a usable game in react/electron. This game's purpose is to help FPS players warm up by honing in their mouse accuracy by practicing against a randomly moving target. the size varies based on the difficulty the user selects
 
 #### Install dependencies
 
